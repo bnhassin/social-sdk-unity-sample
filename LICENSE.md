@@ -1,0 +1,1 @@
+The sample code is part of Discord's Social SDK and the Social SDK Terms (located at: https://support-dev.discord.com/hc/en-us/articles/30225844245271-Discord-Social-SDK-Terms) apply to its use. You may modify the sample code and submit modifications as contributions to this project. Any modifications or contributions will be considered feedback under the terms.
