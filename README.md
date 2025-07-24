@@ -49,14 +49,13 @@ Planned features that haven't been implemented yet:
    - Navigate to the OAuth2 tab:
       - Under "Client information" enable Public Client
       - Under "Redirects" add a redirect URL `http://127.0.0.1/callback`
-
-   <img width="847" height="361" alt="Redirect" src="https://github.com/user-attachments/assets/34aebc71-e59a-4592-bfab-ebe7dddab8dc" />
-
    - Navigate to Discord Social SDK > Downloads
    - Download the latest SDK (`DiscordSocialSdk-UnityPlugin-X.X.X.zip`)
    - Either:
       - Unzip the zip file in the Unity Packages folder, or
       - Unzip the zip file and [Install Package from Disk](https://docs.unity3d.com/Manual/upm-ui-local.html). Make sure the folder is in a directory that won't get moved or deleted as your Unity project will load it from that location.
+
+<img width="989" height="656" alt="Screenshot 2025-07-24 at 9 01 00 AM" src="https://github.com/user-attachments/assets/5ff14158-5700-4435-ad4d-f5da458fe376" />
 
 5. **Configure the Sample**
    - In Unity open the Example scene
@@ -71,7 +70,7 @@ Planned features that haven't been implemented yet:
    - After authorizing, you should see your Discord friends list show up in the sample and your Rich Presence should update to show you are playing the sample game
    - You will also see all logging in the Unity Console
 
-<img width="250" height="371" alt="Oauth" src="https://github.com/user-attachments/assets/b0485408-dfc3-4f67-8524-f76a2bdb7608" />
+<img width="912" height="750" alt="Screenshot 2025-07-24 at 9 04 36 AM" src="https://github.com/user-attachments/assets/e03b1927-4dc9-461b-99a8-a1e244ce70d2" />
 
 ### Troubleshooting
 
