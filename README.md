@@ -15,7 +15,7 @@ Planned features that haven't been implemented yet:
 - **Friend Management** - Send friend requests and remove friends
 - **Game Lobbies** - Create, join, and manage multiplayer lobbies
 - **Game Invitations** - Send deep-link invites to friends for instant lobby joining
-- **Direct Messaging** - In-game messaging with Discord users
+- **Direct Messaging** - In-game messaging
 - **Linked Channels** - Connect game chat to Discord server channels
 - **User Profiles** - Fetch and display Discord user information
 - **Provisional Accounts** - Support for users without Discord accounts
