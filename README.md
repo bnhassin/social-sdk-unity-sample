@@ -35,12 +35,12 @@ Planned features that haven't been implemented yet:
    ```
    or download the ZIP file from the GitHub repository.
 
-3. **Open in Unity**
+2. **Open in Unity**
    - Launch Unity Hub
    - Click "Add" and select "DiscordSocialSDKUnitySample" from the cloned repository or extracted ZIP
    - Open the project
 
-4. **Configure Your Discord Application**
+3. **Configure Your Discord Application**
    - Visit the [Discord Developer Portal](https://discord.com/developers/applications)
    - Create a new application or use an existing one
    - Navigate to the Discord Social SDK > Getting Started section
@@ -57,13 +57,13 @@ Planned features that haven't been implemented yet:
 
 <img width="989" height="656" alt="Screenshot 2025-07-24 at 9 01 00 AM" src="https://github.com/user-attachments/assets/5ff14158-5700-4435-ad4d-f5da458fe376" />
 
-5. **Configure the Sample**
+4. **Configure the Sample**
    - In Unity open the Example scene
    - In your asset folder right click > Create > Config > Discord Social SDK
    - Click on the Social SDK Config and paste your Application ID found under "General Information" from the application you created in the [Discord Developer Portal](https://discord.com/developers/applications)
    - Drag your Discord Social SDK Config into the DiscordManager object in the scene
 
-6. **Run**
+5. **Run**
    - Press the play button to test it in the Editor
    - Click on the "Connect to Discord" button in the UI
    - Discord or the browser should open to authorize the application
