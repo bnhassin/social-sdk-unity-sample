@@ -31,7 +31,7 @@ Planned features that haven't been implemented yet:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/discord/Discord-Social-SDK-Unity-Sample.git
+   git clone https://github.com/discord/social-sdk-unity-sample.git
    ```
    or download the ZIP file from the GitHub repository.
 
