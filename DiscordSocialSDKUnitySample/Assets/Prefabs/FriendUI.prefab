@@ -246,10 +246,10 @@ MonoBehaviour:
   profileImage: {fileID: 8164094497752125855}
   discordFriendImage: {fileID: 1963491126029002582}
   statusIndicator: {fileID: 3149274881456732664}
-  onlineColor: {r: 0.13725491, g: 0.64705884, b: 0.3529412, a: 1}
-  idleColor: {r: 0.94509804, g: 0.76862746, b: 0.05882353, a: 1}
-  dndColor: {r: 0.90588236, g: 0.29803923, b: 0.23529412, a: 1}
-  offlineColor: {r: 0.5921569, g: 0.6117647, b: 0.62352943, a: 1}
+  onlineSprite: {fileID: -3172040653976942954, guid: 20c7fe6486c13461597975f84f9701ed, type: 3}
+  idleSprite: {fileID: 8793639957104055765, guid: d822cb6a201ff49a2a9b859c2c299a7f, type: 3}
+  dndSprite: {fileID: 8828821072720437101, guid: f01471b0a8d1b4c26a0922f49dfff27f, type: 3}
+  offlineSprite: {fileID: -3063204117200953198, guid: 56cb760d35431450a844bf49a2c7cc3b, type: 3}
 --- !u!114 &9007608964247447872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,14 +399,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13725491, g: 0.64705884, b: 0.3529412, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2675244452250869674, guid: 55f0e19f6e33049a6855def0ce5d86ad, type: 3}
+  m_Sprite: {fileID: -3172040653976942954, guid: 20c7fe6486c13461597975f84f9701ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -635,7 +635,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -12}
-  m_SizeDelta: {x: 54.55, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5631896590164008882
 CanvasRenderer:

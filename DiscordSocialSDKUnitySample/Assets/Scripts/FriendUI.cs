@@ -19,10 +19,10 @@ public class FriendUI : MonoBehaviour
     [SerializeField] private Image profileImage;
     [SerializeField] private Image discordFriendImage;
     [SerializeField] private Image statusIndicator;
-    [SerializeField] private Color onlineColor;
-    [SerializeField] private Color idleColor;
-    [SerializeField] private Color dndColor;
-    [SerializeField] private Color offlineColor;
+    [SerializeField] private Sprite onlineSprite;
+    [SerializeField] private Sprite idleSprite;
+    [SerializeField] private Sprite dndSprite;
+    [SerializeField] private Sprite offlineSprite;
 
 #if DISCORD_SOCIAL_SDK_EXISTS
     private RelationshipHandle relationshipHandle;
@@ -51,16 +51,16 @@ public class FriendUI : MonoBehaviour
         switch (relationshipHandle.User().Status())
         {
             case StatusType.Online:
-                statusIndicator.color = onlineColor;
+                statusIndicator.sprite = onlineSprite;
                 break;
             case StatusType.Idle:
-                statusIndicator.color = idleColor;
+                statusIndicator.sprite = idleSprite;
                 break;
             case StatusType.Dnd:
-                statusIndicator.color = dndColor;
+                statusIndicator.sprite = dndSprite;
                 break;
             default:
-                statusIndicator.color = offlineColor;
+                statusIndicator.sprite = offlineSprite;
                 break;
         }
     }
