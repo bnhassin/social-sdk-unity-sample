@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 #if DISCORD_SOCIAL_SDK_EXISTS
 using Discord.Sdk;
 #endif
@@ -48,6 +47,14 @@ public class DiscordManager : MonoBehaviour
         client.AddLogCallback(OnLog, LoggingSeverity.Error);
         client.SetStatusChangedCallback(OnStatusChanged);
         client.SetRelationshipGroupsUpdatedCallback(OnRelationshipsUpdated);
+    }
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("RefreshToken"))
+        {
+            client.RefreshToken(discordSocialSDKConfig.ApplicationId, PlayerPrefs.GetString("RefreshToken"), OnGetToken);
+        }
     }
 
     private void OnDestroy()
@@ -129,6 +136,10 @@ public class DiscordManager : MonoBehaviour
 
     private void OnGetToken(ClientResult result, string token, string refreshToken, AuthorizationTokenType tokenType, int expiresIn, string scope)
     {
+        // Storing the refresh token like this in plain text is not secure. You will want to find a cryptography library for your platform to use to encrypt the token before storing it.
+        // This is ok for testing purposes with a Public Client but when you have a server for your game the OAuth flow should be handled server-side instead of client-side like this.
+        PlayerPrefs.SetString("RefreshToken", refreshToken);
+
         if (token == null || token == string.Empty)
         {
             Debug.Log("Failed to retrieve token");
