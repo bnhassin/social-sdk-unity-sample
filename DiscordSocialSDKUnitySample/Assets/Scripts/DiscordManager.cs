@@ -51,6 +51,9 @@ public class DiscordManager : MonoBehaviour
 
     void Start()
     {
+        // Registering an empty launch command will register the current running executible/app in Windows, Mac, and Linux
+        client.RegisterLaunchCommand(discordSocialSDKConfig.ApplicationId, string.Empty);
+
         if (PlayerPrefs.HasKey("RefreshToken"))
         {
             client.RefreshToken(discordSocialSDKConfig.ApplicationId, PlayerPrefs.GetString("RefreshToken"), OnGetToken);
