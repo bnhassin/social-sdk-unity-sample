@@ -8122,11 +8122,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2036235329 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8437369880797189995, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-  m_PrefabInstance: {fileID: 2081403645073207976}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2038103662 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5193884314003049679, guid: 11d71887b30dd479888c187202649e1a, type: 3}
@@ -19350,17 +19345,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 327164313321858892, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -44.399994
-      objectReference: {fileID: 0}
     - target: {fileID: 3087818733265058139, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
       propertyPath: m_Name
       value: SettingsUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087818733265058139, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3344065924394138282, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
       propertyPath: m_Pivot.x
@@ -19446,30 +19433,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 828851192}
-    - target: {fileID: 6070152361042519598, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6070152361042519598, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6070152361042519598, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-      propertyPath: m_PlaneDistance
-      value: 95
-      objectReference: {fileID: 0}
     - target: {fileID: 7077406089614890987, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
       propertyPath: friendsList
       value: 
       objectReference: {fileID: 577672875}
-    - target: {fileID: 7077406089614890987, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-      propertyPath: settingsPanel
-      value: 
-      objectReference: {fileID: 2036235329}
-    - target: {fileID: 8437369880797189995, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19854,21 +19821,9 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 828851192}
-    - target: {fileID: 281927258856208687, guid: 11d71887b30dd479888c187202649e1a, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 281927258856208687, guid: 11d71887b30dd479888c187202649e1a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1154641033280424945, guid: 11d71887b30dd479888c187202649e1a, type: 3}
       propertyPath: m_Name
       value: StartScreenUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154641033280424945, guid: 11d71887b30dd479888c187202649e1a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5959194607206419656, guid: 11d71887b30dd479888c187202649e1a, type: 3}
       propertyPath: settingsUI
@@ -20141,7 +20096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8507768089490682209
 RectTransform:
   m_ObjectHideFlags: 0

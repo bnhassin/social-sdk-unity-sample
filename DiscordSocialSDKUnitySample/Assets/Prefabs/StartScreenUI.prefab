@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 281927258856208687}
   - component: {fileID: 7789923883564715832}
   - component: {fileID: 2038078204937711923}
-  - component: {fileID: 8329820182128175894}
   - component: {fileID: 1475026383718606667}
   m_Layer: 5
   m_Name: StartScreenUI
@@ -142,7 +141,7 @@ Canvas:
   m_GameObject: {fileID: 1154641033280424945}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -154,7 +153,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &7789923883564715832
 MonoBehaviour:
@@ -196,20 +195,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8329820182128175894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154641033280424945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f2cb03f71af4e53b8550ae699cb19b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  friendsList: {fileID: 0}
-  settingsUI: {fileID: 0}
 --- !u!95 &1475026383718606667
 Animator:
   serializedVersion: 7
@@ -430,7 +415,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.5
 --- !u!114 &3089028164707609831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,7 +915,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6078440564052820746}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5959194607206419656}
+        m_TargetAssemblyTypeName: StartScreenUI, Assembly-CSharp
+        m_MethodName: OpenSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6889043443627598058
 GameObject:
   m_ObjectHideFlags: 0
