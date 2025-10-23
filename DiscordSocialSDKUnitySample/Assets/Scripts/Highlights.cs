@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro; // needed for TextMeshPro
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Collections;
 
 public class HighlightsManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class HighlightsManager : MonoBehaviour
     public SettingsUI settingsUI;
     public GameObject panel; 
 
+    public GameObject highlightPanel;
+
     private int currentStep = 0;
 
     void Start()
@@ -32,11 +35,19 @@ public class HighlightsManager : MonoBehaviour
         //     ShowStep(1);
         // }
         //openSettings();
-         nextButton.onClick.AddListener(() =>
+        nextButton.onClick.AddListener(() =>
+   {
+       Debug.Log("[Highlight Debug] Next button clicked!");
+       NextStep();
+   });
+
+        StartCoroutine(ShowHighlightsCoroutine());
+    }
+    
+    private IEnumerator ShowHighlightsCoroutine()
     {
-        Debug.Log("[Highlight Debug] Next button clicked!");
-        NextStep();
-    });
+        yield return new WaitForSeconds(1.2f);
+        highlightPanel.SetActive(true);
         ShowStep(0);
     }
 

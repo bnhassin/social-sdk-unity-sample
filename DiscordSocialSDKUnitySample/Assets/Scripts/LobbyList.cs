@@ -67,9 +67,9 @@ public class LobbyList : MonoBehaviour
 
     private void LobbyMemberAdded(ulong lobbyId, ulong userId)
     {
-        GameObject playerUIObject = Instantiate(lobbyPlayerUIPrefab, content);
-        StartCoroutine(LoadAvatarFromUrl(client.GetUser(userId).AvatarUrl(UserHandle.AvatarType.Png, UserHandle.AvatarType.Png), playerUIObject.GetComponentInChildren<Image>()));
-        lobbyPlayerUIObjects[userId] = playerUIObject.transform;
+        //GameObject playerUIObject = Instantiate(lobbyPlayerUIPrefab, content);
+        //StartCoroutine(LoadAvatarFromUrl(client.GetUser(userId).AvatarUrl(UserHandle.AvatarType.Png, UserHandle.AvatarType.Png), playerUIObject.GetComponentInChildren<Image>()));
+        //lobbyPlayerUIObjects[userId] = playerUIObject.transform;
     }
 
     private void LobbyMemberRemoved(ulong lobbyId, ulong userId)
