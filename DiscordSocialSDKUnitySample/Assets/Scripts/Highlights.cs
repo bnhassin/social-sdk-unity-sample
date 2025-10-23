@@ -12,6 +12,9 @@ public class HighlightsManager : MonoBehaviour
     {
         public RectTransform target;
         public string instruction;
+
+        [System.NonSerialized] 
+        public System.Action onStep;
     }
 
     public List<TutorialStep> steps;
@@ -21,6 +24,7 @@ public class HighlightsManager : MonoBehaviour
     // public Button deleteTokenButton;
     public Image overlay;
     public SettingsUI settingsUI;
+    public FriendListAnimation friendListAnimator;
     public GameObject panel; 
 
     public GameObject highlightPanel;
@@ -35,9 +39,14 @@ public class HighlightsManager : MonoBehaviour
         //     ShowStep(1);
         // }
         //openSettings();
+        
+        steps[0].onStep = OpenFriendList;
+        steps[1].onStep = OpenConnectToDiscord;
+        steps[2].onStep = StartAuthFlow;
         nextButton.onClick.AddListener(() =>
    {
        Debug.Log("[Highlight Debug] Next button clicked!");
+       steps[currentStep].onStep?.Invoke();
        NextStep();
    });
 
@@ -46,17 +55,28 @@ public class HighlightsManager : MonoBehaviour
     
     private IEnumerator ShowHighlightsCoroutine()
     {
+        highlightPanel.SetActive(false);
+        panel.gameObject.SetActive(false);
+        highlightBox.gameObject.SetActive(false);
         yield return new WaitForSeconds(1.2f);
-        highlightPanel.SetActive(true);
         ShowStep(0);
     }
 
-    void openSettings() {
-        settingsUI.openSettings();
+    void OpenFriendList() {
+        friendListAnimator.ShowFriendsList();
+    }
+
+    void OpenConnectToDiscord() {
+        settingsUI.OpenConnectToDiscord();
+    }
+
+    void StartAuthFlow() {
+        settingsUI.StartAuthFlow();
     }
 
     void ShowStep(int index)
     {
+        
         if (index >= steps.Count)
         {
             Debug.Log("Tutorial completed — disabling all tutorial UI.");
@@ -64,9 +84,13 @@ public class HighlightsManager : MonoBehaviour
             overlay.gameObject.SetActive(false);
             instructionText.gameObject.SetActive(false);
             nextButton.gameObject.SetActive(false);
+            highlightPanel.gameObject.SetActive(false);
             panel.gameObject.SetActive(false);
             return;
         }
+        highlightPanel.SetActive(true);
+        panel.gameObject.SetActive(true);
+        highlightBox.gameObject.SetActive(true);
         Debug.Log("Showing step: " + index);
 
         var step = steps[index];

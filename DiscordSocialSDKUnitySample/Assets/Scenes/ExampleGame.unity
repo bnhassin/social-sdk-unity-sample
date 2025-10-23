@@ -752,11 +752,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330186275}
   m_CullTransparentMesh: 1
---- !u!224 &481356706 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9196744667321002379, guid: 11d71887b30dd479888c187202649e1a, type: 3}
-  m_PrefabInstance: {fileID: 4577447319465936642}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &483912100
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,10 +819,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8507768089490682209}
-  - {fileID: 7366365578706093224}
-  - {fileID: 1679824787422831422}
+  m_Children: []
   m_Father: {fileID: 7384587485807362972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1567,7 +1559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8069527852777390005, guid: 5a0adccc665a64b2098e3ee336818383, type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8239657555427428414, guid: 5a0adccc665a64b2098e3ee336818383, type: 3}
       propertyPath: m_Camera
@@ -7166,6 +7158,11 @@ Transform:
   - {fileID: 2043825643}
   m_Father: {fileID: 1539525210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1037806305 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5660928702088126469, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
+  m_PrefabInstance: {fileID: 2081403645073207976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1051911141
 GameObject:
   m_ObjectHideFlags: 0
@@ -20929,7 +20926,7 @@ RectTransform:
   m_Children:
   - {fileID: 3545906780286180365}
   - {fileID: 1460273770565781155}
-  m_Father: {fileID: 483912103}
+  m_Father: {fileID: 7384587485807362972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21748,7 +21745,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 483912103}
+  m_Father: {fileID: 7384587485807362972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21767,6 +21764,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8507768089490682209}
+  - {fileID: 7366365578706093224}
+  - {fileID: 1679824787422831422}
   - {fileID: 483912103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21790,13 +21790,16 @@ MonoBehaviour:
   steps:
   - target: {fileID: 2038103662}
     instruction: Click here to play with friends
-  - target: {fileID: 481356706}
-    instruction: play game starts here
+  - target: {fileID: 2066042090}
+    instruction: play with friends
+  - target: {fileID: 1037806305}
+    instruction: connect
   highlightBox: {fileID: 1925326217909455916}
   instructionText: {fileID: 4316024801613627292}
   nextButton: {fileID: 4023699716144114863}
   overlay: {fileID: 5154519225176620524}
   settingsUI: {fileID: 260014503}
+  friendListAnimator: {fileID: 577672881}
   panel: {fileID: 8685660379760732655}
   highlightPanel: {fileID: 483912100}
 --- !u!1 &8208096688906468677
@@ -21831,7 +21834,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 483912103}
+  m_Father: {fileID: 7384587485807362972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
