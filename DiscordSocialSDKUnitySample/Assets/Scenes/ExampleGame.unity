@@ -854,10 +854,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -52
       objectReference: {fileID: 0}
-    - target: {fileID: 8069527852777390005, guid: 5a0adccc665a64b2098e3ee336818383, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1086,7 +1082,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -19655,10 +19651,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -44.399994
       objectReference: {fileID: 0}
-    - target: {fileID: 1252182875419929016, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3087818733265058139, guid: 38f4065942b274a7da173da9c27bed5b, type: 3}
       propertyPath: m_Name
       value: SettingsUI
@@ -19812,10 +19804,6 @@ PrefabInstance:
       propertyPath: friendsList
       value: 
       objectReference: {fileID: 577672875}
-    - target: {fileID: 7789923883564715832, guid: 11d71887b30dd479888c187202649e1a, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8804123753983947640, guid: 11d71887b30dd479888c187202649e1a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
