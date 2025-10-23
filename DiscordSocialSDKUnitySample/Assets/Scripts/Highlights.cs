@@ -46,8 +46,9 @@ public class HighlightsManager : MonoBehaviour
     
     private IEnumerator ShowHighlightsCoroutine()
     {
+        highlightPanel.SetActive(false);
+        highlightBox.gameObject.SetActive(false);
         yield return new WaitForSeconds(1.2f);
-        highlightPanel.SetActive(true);
         ShowStep(0);
     }
 
@@ -57,6 +58,7 @@ public class HighlightsManager : MonoBehaviour
 
     void ShowStep(int index)
     {
+        
         if (index >= steps.Count)
         {
             Debug.Log("Tutorial completed — disabling all tutorial UI.");
@@ -64,9 +66,11 @@ public class HighlightsManager : MonoBehaviour
             overlay.gameObject.SetActive(false);
             instructionText.gameObject.SetActive(false);
             nextButton.gameObject.SetActive(false);
-            panel.gameObject.SetActive(false);
+            highlightPanel.gameObject.SetActive(false);
             return;
         }
+        highlightPanel.SetActive(true);
+        highlightBox.gameObject.SetActive(true);
         Debug.Log("Showing step: " + index);
 
         var step = steps[index];
