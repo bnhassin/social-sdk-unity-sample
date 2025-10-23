@@ -7,6 +7,7 @@ public class SettingsUI : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject connectToDiscordPanel;
     public GameObject accountLinkedPanel;
+    public GameObject loadingPanel;
 
     void Start()
     {
@@ -52,11 +53,14 @@ public class SettingsUI : MonoBehaviour
 
     public void StartAuthFlow()
     {
+        loadingPanel.SetActive(true);
+        connectToDiscordPanel.SetActive(false);
         DiscordManager.Instance.StartOAuthFlow();
     }
 
     public void ShowAccountLinked()
     {
+        loadingPanel.SetActive(false);
         connectToDiscordPanel.SetActive(false);
         settingsPanel.SetActive(false);
         accountLinkedPanel.SetActive(true);
@@ -64,6 +68,7 @@ public class SettingsUI : MonoBehaviour
     
     public void FinishAccountLinked()
     {
+        loadingPanel.SetActive(false);
         connectToDiscordPanel.SetActive(false);
         settingsPanel.SetActive(false);
         accountLinkedPanel.SetActive(false);
