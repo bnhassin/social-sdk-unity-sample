@@ -1,4 +1,5 @@
 using UnityEngine;
+using Discord.Sdk;
 
 public class SettingsUI : MonoBehaviour
 {
@@ -6,6 +7,19 @@ public class SettingsUI : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject connectToDiscordPanel;
     public GameObject accountLinkedPanel;
+
+    void Start()
+    {
+        DiscordManager.Instance.OnDiscordStatusChanged += OnStatusChanged;
+    }
+
+    private void OnStatusChanged(Client.Status status, Client.Error error, int errorCode)
+    {
+        if (status == Client.Status.Ready)
+        {
+            ShowAccountLinked();
+        }
+    }
 
     public void openSettings()
     {
@@ -38,7 +52,7 @@ public class SettingsUI : MonoBehaviour
 
     public void StartAuthFlow()
     {
-
+        DiscordManager.Instance.StartOAuthFlow();
     }
 
     public void ShowAccountLinked()

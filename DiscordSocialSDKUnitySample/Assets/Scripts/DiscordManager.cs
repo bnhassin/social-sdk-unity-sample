@@ -76,7 +76,7 @@ public class DiscordManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey("RefreshToken"))
         {
-            client.RefreshToken(discordSocialSDKConfig.ApplicationId, PlayerPrefs.GetString("RefreshToken"), OnGetToken);
+            //client.RefreshToken(discordSocialSDKConfig.ApplicationId, PlayerPrefs.GetString("RefreshToken"), OnGetToken);
         }
     }
 
