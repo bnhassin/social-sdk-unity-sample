@@ -25,7 +25,14 @@ public class SettingsUI : MonoBehaviour
     public void openSettings()
     {
         settingsPanel.SetActive(true);
-        Debug.Log("Settings panel opened!");
+    }
+
+    public void CloseAll()
+    {
+        settingsPanel.SetActive(false);
+        connectToDiscordPanel.SetActive(false);
+        accountLinkedPanel.SetActive(false);
+        loadingPanel.SetActive(false);
     }
 
     public void CloseSettings()
@@ -65,6 +72,11 @@ public class SettingsUI : MonoBehaviour
         settingsPanel.SetActive(false);
         accountLinkedPanel.SetActive(true);
         friendsList.ShowFriendsList();
+    }
+
+    public void ShowAccountLinkedOnly()
+    {
+        accountLinkedPanel.SetActive(true);
     }
     
     public void FinishAccountLinked()

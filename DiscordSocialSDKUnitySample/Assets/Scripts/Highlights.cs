@@ -25,9 +25,10 @@ public class HighlightsManager : MonoBehaviour
     public Image overlay;
     public SettingsUI settingsUI;
     public FriendListAnimation friendListAnimator;
-    public GameObject panel; 
+    public GameObject panel;
 
     public GameObject highlightPanel;
+    public GameObject oauthImage;
 
     private int currentStep = 0;
 
@@ -38,6 +39,10 @@ public class HighlightsManager : MonoBehaviour
         steps[0].onStep = () => { friendListAnimator.ShowFriendsList(); };
         steps[2].onStep = () => { friendListAnimator.HideFriendsList(); };
         steps[3].onStep = () => { settingsUI.openSettings(); };
+        steps[6].onStep = () => { settingsUI.CloseAll(); settingsUI.OpenConnectToDiscord(); };
+        steps[9].onStep = () => { settingsUI.CloseAll(); oauthImage.SetActive(true); };
+        steps[11].onStep = () => { oauthImage.SetActive(false); settingsUI.ShowAccountLinkedOnly(); };
+        steps[12].onStep = () => { settingsUI.CloseAll(); };
 
         nextButton.onClick.AddListener(() =>
    {
