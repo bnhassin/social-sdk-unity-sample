@@ -37,11 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlueOffset: -0.01
-    - _CRTIntensity: 0.956
-    - _GreenOffset: -0.005
-    - _MaskDensity: 200
-    - _RedOffset: 0.01
+    - _BlueOffset: -0.005
+    - _CRTIntensity: 0.965
+    - _GreenOffset: -0.0025
+    - _MaskDensity: 233
+    - _RedOffset: 0.005
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f2cb03f71af4e53b8550ae699cb19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friendsList: {fileID: 0}
   settingsUI: {fileID: 0}
 --- !u!223 &281927258856208687
 Canvas:
@@ -337,7 +336,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3618813064870252897}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5959194607206419656}
+        m_TargetAssemblyTypeName: StartScreenUI, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2272935599310495739
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +361,7 @@ GameObject:
   - component: {fileID: 2583705814802234168}
   - component: {fileID: 3749419232852064471}
   - component: {fileID: 3089028164707609831}
+  - component: {fileID: 2591227018858133640}
   m_Layer: 5
   m_Name: PlayWithFriendsButton
   m_TagString: Untagged
@@ -459,7 +471,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3749419232852064471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: FriendListAnimation, Assembly-CSharp
+        m_MethodName: ShowFriendsList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2591227018858133640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272935599310495739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27457023be7a42c0a3b622face2baed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3066367145515451818
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +830,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 924690404010715045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5959194607206419656}
+        m_TargetAssemblyTypeName: StartScreenUI, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6721474538821648714
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +1011,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 235}
-  m_SizeDelta: {x: 1014, y: 518.9}
+  m_SizeDelta: {x: 907.2, y: 518.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2139976313593619762
 CanvasRenderer:

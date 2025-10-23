@@ -3,11 +3,11 @@ using Discord.Sdk;
 
 public class SettingsUI : MonoBehaviour
 {
-    public GameObject friendsList;
     public GameObject settingsPanel;
     public GameObject connectToDiscordPanel;
     public GameObject accountLinkedPanel;
     public GameObject loadingPanel;
+    public FriendListAnimation friendsList;
 
     void Start()
     {
@@ -64,6 +64,7 @@ public class SettingsUI : MonoBehaviour
         connectToDiscordPanel.SetActive(false);
         settingsPanel.SetActive(false);
         accountLinkedPanel.SetActive(true);
+        friendsList.ShowFriendsList();
     }
     
     public void FinishAccountLinked()
