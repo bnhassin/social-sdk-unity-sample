@@ -31,18 +31,14 @@ public class HighlightsManager : MonoBehaviour
 
     private int currentStep = 0;
 
+    private RectTransform currentTarget;
+
     void Start()
     {
-        Debug.Log("Highlight Manager started!");
-        //deleteTokenButton.onClick.AddListener(DeleteRefreshToken);
-        // if (PlayerPrefs.HasKey("RefreshToken")) {
-        //     ShowStep(1);
-        // }
-        //openSettings();
-        
-        steps[0].onStep = OpenFriendList;
-        steps[1].onStep = OpenConnectToDiscord;
-        steps[2].onStep = StartAuthFlow;
+        steps[0].onStep = () => { friendListAnimator.ShowFriendsList(); };
+        steps[2].onStep = () => { friendListAnimator.HideFriendsList(); };
+        steps[3].onStep = () => { settingsUI.openSettings(); };
+
         nextButton.onClick.AddListener(() =>
    {
        Debug.Log("[Highlight Debug] Next button clicked!");
@@ -50,33 +46,19 @@ public class HighlightsManager : MonoBehaviour
        NextStep();
    });
 
-        StartCoroutine(ShowHighlightsCoroutine());
     }
     
-    private IEnumerator ShowHighlightsCoroutine()
+    public void StartTutorial()
     {
         highlightPanel.SetActive(false);
         panel.gameObject.SetActive(false);
         highlightBox.gameObject.SetActive(false);
-        yield return new WaitForSeconds(1.2f);
         ShowStep(0);
-    }
-
-    void OpenFriendList() {
-        friendListAnimator.ShowFriendsList();
-    }
-
-    void OpenConnectToDiscord() {
-        settingsUI.OpenConnectToDiscord();
-    }
-
-    void StartAuthFlow() {
-        settingsUI.StartAuthFlow();
     }
 
     void ShowStep(int index)
     {
-        
+
         if (index >= steps.Count)
         {
             Debug.Log("Tutorial completed — disabling all tutorial UI.");
@@ -96,72 +78,27 @@ public class HighlightsManager : MonoBehaviour
         var step = steps[index];
         instructionText.text = step.instruction;
 
-        // ====== Highlight positioning logic ======
-
-    Canvas canvas = highlightBox.canvas;
-    RectTransform canvasRect = canvas.GetComponent<RectTransform>();
-    Camera cam = canvas.worldCamera;
-
-    RectTransform targetRect = step.target;
-
-    // --- Get world-space corners of the target ---
-    Vector3[] corners = new Vector3[4];
-    targetRect.GetWorldCorners(corners);
-
-    // --- Compute world-space center of target ---
-    Vector3 worldCenter = (corners[0] + corners[2]) / 2f;
-
-    // --- Convert to screen-space ---
-    Vector2 screenCenter = RectTransformUtility.WorldToScreenPoint(cam, worldCenter);
-
-    // --- Convert screen-space to local point in highlight canvas ---
-    Vector2 localPoint;
-    RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        canvasRect,
-        screenCenter,
-        cam,
-        out localPoint
-    );
-
-    // --- Apply position to highlight box ---
-    highlightBox.rectTransform.anchoredPosition = localPoint;
-
-    // ====== Compute correct highlight box size in canvas space ======
-    Vector2 bl, tr;
-    RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        canvasRect,
-        RectTransformUtility.WorldToScreenPoint(cam, corners[0]),
-        cam,
-        out bl
-    );
-    RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        canvasRect,
-        RectTransformUtility.WorldToScreenPoint(cam, corners[2]),
-        cam,
-        out tr
-    );
-
-    Vector2 canvasSize = tr - bl;
-    highlightBox.rectTransform.sizeDelta = new Vector2(Mathf.Abs(canvasSize.x), Mathf.Abs(canvasSize.y));
-
-    Debug.Log($"Highlight anchoredPosition={highlightBox.rectTransform.anchoredPosition} | sizeDelta={highlightBox.rectTransform.sizeDelta}");
-
+        currentTarget = step.target;
     }
 
-    private bool IsInsideViewport(Vector2 screenPos, Vector2 elementSize)
+    void Update()
     {
-        // Get current screen size
-        float screenWidth = Screen.width;
-        float screenHeight = Screen.height;
+        if (currentTarget == null || highlightBox == null) return;
 
-        // Compute boundaries of the element in screen space
-        float halfWidth = elementSize.x / 2f;
-        float halfHeight = elementSize.y / 2f;
+        Canvas canvas = highlightBox.canvas;
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
 
-        bool withinHorizontal = (screenPos.x - halfWidth >= 0) && (screenPos.x + halfWidth <= screenWidth);
-        bool withinVertical = (screenPos.y - halfHeight >= 0) && (screenPos.y + halfHeight <= screenHeight);
+        var bounds = RectTransformUtility.CalculateRelativeRectTransformBounds(canvasRect, currentTarget);
 
-        return withinHorizontal && withinVertical;
+        Vector2 targetPos = new Vector2(bounds.center.x, bounds.center.y);
+        Vector2 targetSize = new Vector2(Mathf.Abs(bounds.size.x), Mathf.Abs(bounds.size.y));
+
+        float speed = 8f;
+        float t = 1f - Mathf.Exp(-speed * Time.deltaTime);
+
+        var rt = highlightBox.rectTransform;
+        rt.anchoredPosition = Vector2.Lerp(rt.anchoredPosition, targetPos, t);
+        rt.sizeDelta = Vector2.Lerp(rt.sizeDelta, targetSize, t);
     }
 
     void NextStep()
@@ -169,14 +106,5 @@ public class HighlightsManager : MonoBehaviour
         Debug.Log("Next step!");
         currentStep++;
         ShowStep(currentStep);
-    }
-
-    void DeleteRefreshToken()
-    {
-        PlayerPrefs.DeleteKey("RefreshToken");
-        PlayerPrefs.Save();
-        Debug.Log("RefreshToken deleted successfully");
-        
-        SceneManager.LoadScene("Example");
     }
 }

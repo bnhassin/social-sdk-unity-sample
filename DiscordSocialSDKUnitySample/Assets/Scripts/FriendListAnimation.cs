@@ -8,4 +8,9 @@ public class FriendListAnimation : MonoBehaviour
     {
         animator.SetTrigger("Open");
     }
+
+    public void HideFriendsList()
+    {
+        animator.SetTrigger("Close");
+    }
 }
